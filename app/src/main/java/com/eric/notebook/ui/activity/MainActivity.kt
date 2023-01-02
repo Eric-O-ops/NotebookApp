@@ -1,7 +1,8 @@
-package com.eric.notebook
+package com.eric.notebook.ui.activity
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.eric.notebook.R
 
 class MainActivity : AppCompatActivity() {
 
