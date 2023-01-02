@@ -1,6 +1,12 @@
 plugins {
     id (Plugins.application)
     id (Plugins.kotlinAndroid)
+
+    // Kapt
+    kotlin (Plugins.kapt)
+
+    // Hilt
+    id (Plugins.hilt)
 }
 
 android {
@@ -52,4 +58,25 @@ dependencies {
     testImplementation ("junit:junit:4.13.2")
     androidTestImplementation ("androidx.test.ext:junit:1.1.4")
     androidTestImplementation ("androidx.test.espresso:espresso-core:3.5.0")
+
+    // Room
+    implementation(Dependencies.Room.roomRuntime)
+    annotationProcessor(Dependencies.Room.roomCompiler)
+    kapt(Dependencies.Room.roomCompiler)
+
+    // ViewBinding Property Delegate
+    implementation(Dependencies.ViewBindingPropertyDelegate.viewBindingDelegate)
+
+    // Navigation
+    implementation(Dependencies.Navigation.navigation)
+
+    //Hilt
+    implementation(Dependencies.DaggerHilt.daggerHilt)
+    kapt(Dependencies.DaggerHilt.hiltAndroidKapt)
+
+    //LottieFiles
+    implementation (Dependencies.LottieFiles.lottie)
+
+    //Dots indicator
+    implementation (Dependencies.DotsIndicator.dotsIndicator)
 }
