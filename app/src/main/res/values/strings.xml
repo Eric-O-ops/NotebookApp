@@ -1,9 +1,14 @@
 <resources>
     <string name="app_name">Notebook</string>
-    <!-- TODO: Remove or change this placeholder text -->
+    <string name="anim_view_description_1">Очень удобный функционал</string>
+    <string name="anim_view_description_2">Быстрый, качественный продукт</string>
+    <string name="anim_view_description_3">Куча функций и интересных фишек</string>
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="Notes">Заметки</string>
     <string name="search_for_notes">Поиск заметок</string>
     <string name="add_note">Add note</string>
     <string name="type_layout">type layout</string>
+    <string name="create_note">Готово</string>
+    <string name="skip_screen">Пропустить</string>
+    <string name="hint_need_to_do">Нужно сделать:</string>
 </resources>

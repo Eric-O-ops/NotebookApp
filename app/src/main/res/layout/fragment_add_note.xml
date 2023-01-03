@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/black"
-    tools:context=".ui.fragments.main.detail.DetailFragment">
+    tools:context=".ui.fragments.main.addnote.AddNoteFragment">
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/btn_back_and_date"
@@ -31,26 +31,13 @@
         app:layout_constraintTop_toTopOf="@id/btn_back_and_date"
         tools:text="17:30" />
 
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/btn_create_note"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background=""
-        android:text="@string/create_note"
-        android:textAllCaps="false"
-        android:textColor="@color/orange"
-        android:textSize="15sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
     <androidx.appcompat.widget.AppCompatEditText
         android:id="@+id/et_description_note"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_marginTop="20dp"
-        android:hint="@string/hint_need_to_do"
-        android:inputType="text"
         android:layout_marginHorizontal="20dp"
+        android:layout_marginTop="20dp"
+        android:inputType="text"
         android:textColorHint="@color/medium_light_gray"
         android:textSize="12sp"
         app:layout_constraintTop_toBottomOf="@id/btn_back_and_date" />
