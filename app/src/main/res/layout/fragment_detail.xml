@@ -54,21 +54,18 @@
         <com.google.android.material.imageview.ShapeableImageView
             android:layout_width="80dp"
             android:layout_height="45dp"
-            android:background="@color/light_black"
-            app:shapeAppearanceOverlay="@style/roundImageView" />
+            android:background="@color/light_black" />
 
         <com.google.android.material.imageview.ShapeableImageView
             android:layout_width="80dp"
             android:layout_height="45dp"
             android:layout_marginHorizontal="30dp"
-            android:background="@color/lemon_chiffon"
-            app:shapeAppearanceOverlay="@style/roundImageView" />
+            android:background="@color/lemon_chiffon"/>
 
         <com.google.android.material.imageview.ShapeableImageView
             android:layout_width="80dp"
             android:layout_height="45dp"
-            android:background="@color/dark_red"
-            app:shapeAppearanceOverlay="@style/roundImageView" />
+            android:background="@color/dark_red" />
 
     </LinearLayout>
 

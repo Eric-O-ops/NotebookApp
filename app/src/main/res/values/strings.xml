@@ -11,4 +11,5 @@
     <string name="create_note">Готово</string>
     <string name="skip_screen">Пропустить</string>
     <string name="hint_need_to_do">Нужно сделать:</string>
+    <string name="star_work">Начать работу</string>
 </resources>

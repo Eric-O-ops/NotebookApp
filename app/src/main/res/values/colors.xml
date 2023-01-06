@@ -14,4 +14,6 @@
     <color name="light_black">#191818</color>
     <color name="medium_light_gray">#B1B1B1</color>
     <color name="medium_dark_gray">#505050</color>
+    <color name="suva_grey">#8E8B8B</color>
+    <color name="silver">#C4C4C4</color>
 </resources>
