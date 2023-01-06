@@ -12,7 +12,6 @@ import dagger.hilt.android.AndroidEntryPoint
 @AndroidEntryPoint
 class AddNoteFragment : BaseFragment<FragmentAddNoteBinding>(R.layout.fragment_add_note) {
 
-
     override val binding by viewBinding(FragmentAddNoteBinding::bind)
 
     override fun setupListener() {
