@@ -11,7 +11,7 @@
         android:id="@+id/btn_back_and_date"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background=""
+        android:background="#00000000"
         android:paddingStart="19dp"
         android:paddingEnd="5dp"
         android:textAllCaps="false"
@@ -31,24 +31,11 @@
         app:layout_constraintTop_toTopOf="@id/btn_back_and_date"
         tools:text="17:30" />
 
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/btn_create_note"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background=""
-        android:text="@string/create_note"
-        android:textAllCaps="false"
-        android:textColor="@color/orange"
-        android:textSize="15sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
     <androidx.appcompat.widget.AppCompatEditText
         android:id="@+id/et_description_note"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_marginTop="20dp"
-        android:hint="@string/hint_need_to_do"
         android:inputType="text"
         android:layout_marginHorizontal="20dp"
         android:textColorHint="@color/medium_light_gray"
@@ -67,21 +54,18 @@
         <com.google.android.material.imageview.ShapeableImageView
             android:layout_width="80dp"
             android:layout_height="45dp"
-            android:background="@color/light_black"
-            app:shapeAppearanceOverlay="@style/roundImageView" />
+            android:background="@color/light_black" />
 
         <com.google.android.material.imageview.ShapeableImageView
             android:layout_width="80dp"
             android:layout_height="45dp"
             android:layout_marginHorizontal="30dp"
-            android:background="@color/lemon_chiffon"
-            app:shapeAppearanceOverlay="@style/roundImageView" />
+            android:background="@color/lemon_chiffon"/>
 
         <com.google.android.material.imageview.ShapeableImageView
             android:layout_width="80dp"
             android:layout_height="45dp"
-            android:background="@color/dark_red"
-            app:shapeAppearanceOverlay="@style/roundImageView" />
+            android:background="@color/dark_red" />
 
     </LinearLayout>
 

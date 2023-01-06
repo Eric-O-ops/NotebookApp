@@ -1,19 +1,13 @@
 package com.eric.notebook.ui.fragments.main.detail
 
-import android.os.Bundle
-import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
+import by.kirich1409.viewbindingdelegate.viewBinding
 import com.eric.notebook.R
+import com.eric.notebook.base.BaseFragment
+import com.eric.notebook.databinding.FragmentDetailBinding
+import dagger.hilt.android.AndroidEntryPoint
 
-class DetailFragment : Fragment() {
+@AndroidEntryPoint
+class DetailFragment : BaseFragment<FragmentDetailBinding>(R.layout.fragment_detail) {
 
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_detail, container, false)
-    }
+    override val binding by viewBinding(FragmentDetailBinding::bind)
 }

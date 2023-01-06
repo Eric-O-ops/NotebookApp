@@ -1,24 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@color/black"
     tools:context=".ui.fragments.onboard.OnBoardFragment">
 
-
     <com.google.android.material.button.MaterialButton
-        android:id="@+id/btn_create_note"
+        android:id="@+id/btn_skip_on_board"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background=""
+        android:layout_gravity="end"
+        android:background="#00000000"
+        android:paddingTop="25dp"
         android:text="@string/skip_screen"
         android:textAllCaps="false"
         android:textColor="@color/orange"
-        android:textSize="15sp"
-        android:paddingTop="25dp"
-        android:layout_gravity="end"/>
+        android:textSize="15sp" />
 
     <com.airbnb.lottie.LottieAnimationView
         android:id="@+id/animationView"
@@ -27,17 +26,28 @@
         android:layout_gravity="center"
         android:layout_marginBottom="100dp"
         app:lottie_autoPlay="true"
-        app:lottie_fileName="anim_picture_screen_one.json"
+        app:lottie_fileName="anim_image_1.json"
         app:lottie_loop="true" />
 
     <TextView
         android:id="@+id/tv_anim_view_description"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/anim_view_description_1"
-        android:textSize="16sp"
-        android:textColor="@color/white"
         android:layout_gravity="center"
-        android:layout_marginTop="100dp"/>
+        android:layout_marginTop="100dp"
+        android:text="@string/anim_view_description_1"
+        android:textColor="@color/white"
+        android:textSize="16sp" />
+
+    <TextView
+        android:id="@+id/tv_start_work"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center|bottom"
+        android:layout_marginBottom="170dp"
+        android:text="@string/star_work"
+        android:textColor="@color/suva_grey"
+        android:textSize="16sp"
+        android:visibility="gone" />
 
 </FrameLayout>

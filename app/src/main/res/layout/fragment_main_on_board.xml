@@ -3,12 +3,23 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.fragments.onboard.MainOnBoardFragment">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".ui.fragments.onboard.OnBoardMainFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+   <androidx.viewpager2.widget.ViewPager2
+       android:id="@+id/view_pager"
+       android:layout_width="match_parent"
+       android:layout_height="match_parent"/>
+
+    <me.relex.circleindicator.CircleIndicator3
+        android:id="@+id/dots_indicator"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="48dp"
+        android:layout_gravity="bottom"
+        app:ci_drawable="@drawable/ci_selected"
+        app:ci_drawable_unselected="@drawable/ci_unselected"
+        app:ci_height="8dp"
+        app:ci_width="8dp"
+        android:layout_marginBottom="80dp"/>
 
 </FrameLayout>

@@ -5,8 +5,4 @@
         android:drawable="@drawable/ic_checked"
         android:state_checked="true" />
 
-    <item
-        android:drawable="#00FFFFFF"
-        android:state_checked="false" />
-
 </selector>

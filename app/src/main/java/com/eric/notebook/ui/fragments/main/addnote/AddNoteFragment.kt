@@ -1,19 +1,47 @@
 package com.eric.notebook.ui.fragments.main.addnote
 
-import android.os.Bundle
-import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
+import by.kirich1409.viewbindingdelegate.viewBinding
 import com.eric.notebook.R
+import com.eric.notebook.base.BaseFragment
+import com.eric.notebook.databinding.FragmentAddNoteBinding
+import com.eric.notebook.getDate
+import com.eric.notebook.getTime
+import com.eric.notebook.navigate
+import dagger.hilt.android.AndroidEntryPoint
 
-class AddNoteFragment : Fragment() {
+@AndroidEntryPoint
+class AddNoteFragment : BaseFragment<FragmentAddNoteBinding>(R.layout.fragment_add_note) {
 
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_add_note, container, false)
+    override val binding by viewBinding(FragmentAddNoteBinding::bind)
+
+    override fun setupListener() {
+
+        createNote()
+        setBackgroundColorNote()
+    }
+
+    override fun setupView() = with(binding) {
+        btnBackAndDate.text = getDate()
+        tvTime.text = getTime()
+    }
+
+    private fun createNote() {
+        binding.btnCreateNote.setOnClickListener {
+            navigate(R.id.action_addNoteFragment_to_mainFragment)
+        }
+    }
+
+    private fun setBackgroundColorNote() = with(binding) {
+        btnColor1.setOnClickListener {
+            radioBtnPosition1.isChecked = true
+        }
+
+        btnColor2.setOnClickListener {
+            radioBtnPosition2.isChecked = true
+        }
+
+        btnColor3.setOnClickListener {
+            radioBtnPosition3.isChecked = true
+        }
     }
 }
