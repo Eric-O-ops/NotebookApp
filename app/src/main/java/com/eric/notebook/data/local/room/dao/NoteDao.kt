@@ -1,5 +1,6 @@
 package com.eric.notebook.data.local.room.dao
 
+import androidx.lifecycle.LiveData
 import androidx.room.Dao
 import androidx.room.Delete
 import androidx.room.Insert
@@ -12,7 +13,7 @@ import com.eric.notebook.models.NoteModel
 interface NoteDao {
 
     @Query("SELECT * FROM ${NoteModel.TABLE_NAME}")
-    fun loadAllNote(): List<NoteModel>
+    fun loadAllNote(): LiveData<List<NoteModel>>
 
     @Insert(entity = NoteModel::class, onConflict = OnConflictStrategy.REPLACE)
     fun addNote(noteModel: NoteModel)

@@ -43,17 +43,30 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <androidx.appcompat.widget.AppCompatEditText
-        android:id="@+id/et_description_note"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_marginTop="20dp"
-        android:hint="@string/hint_need_to_do"
-        android:inputType="text"
-        android:layout_marginHorizontal="20dp"
-        android:textColorHint="@color/medium_light_gray"
-        android:textSize="12sp"
-        app:layout_constraintTop_toBottomOf="@id/btn_back_and_date" />
+        android:orientation="vertical"
+        android:layout_marginBottom="5dp"
+        app:layout_constraintBottom_toTopOf="@id/linearLayout"
+        app:layout_constraintTop_toBottomOf="@id/btn_back_and_date">
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/et_description_note"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:hint="@string/hint_need_to_do"
+            android:textCursorDrawable="@drawable/text_cursor"
+            android:inputType="textMultiLine"
+            android:background="@null"
+            android:scrollbars="vertical"
+            android:textColor="@color/medium_light_gray"
+            android:layout_marginHorizontal="20dp"
+            android:textColorHint="@color/medium_light_gray"
+            android:textSize="14sp"/>
+
+    </LinearLayout>
 
     <LinearLayout
         android:id="@+id/linearLayout"

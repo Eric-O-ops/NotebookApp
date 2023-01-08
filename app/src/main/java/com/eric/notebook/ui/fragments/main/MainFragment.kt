@@ -1,5 +1,6 @@
 package com.eric.notebook.ui.fragments.main
 
+import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.LinearLayoutManager
 import by.kirich1409.viewbindingdelegate.viewBinding
 import com.eric.notebook.R
@@ -11,20 +12,27 @@ import dagger.hilt.android.AndroidEntryPoint
 
 
 @AndroidEntryPoint
-class MainFragment : BaseFragment<FragmentMainBinding>(R.layout.fragment_main) {
+class MainFragment : BaseFragment<FragmentMainBinding, MainViewModel>(R.layout.fragment_main) {
 
     override val binding by viewBinding(FragmentMainBinding::bind)
+    override val viewModel: MainViewModel by viewModels()
     private val noteAdapter = NoteAdapter()
 
     override fun initialize() {
+        loadNoteList()
         binding.recyclerView.apply {
             layoutManager = LinearLayoutManager(requireContext())
             adapter = noteAdapter
         }
     }
 
-    override fun setupListener() {
+    private fun loadNoteList() {
+        viewModel.loadAllNote().observe(viewLifecycleOwner) {
+            noteAdapter.setList(it)
+        }
+    }
 
+    override fun setupListener() {
         addNote()
     }
 

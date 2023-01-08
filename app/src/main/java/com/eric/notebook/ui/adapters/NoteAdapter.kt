@@ -2,6 +2,7 @@ package com.eric.notebook.ui.adapters
 
 import android.annotation.SuppressLint
 import android.graphics.Color
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
@@ -27,6 +28,7 @@ class NoteAdapter : RecyclerView.Adapter<NoteAdapter.ViewHolder>() {
             val dataAndTime = "${model.date}\n${model.time}"
 
             itemBackground.setBackgroundColor(Color.parseColor(model.backgroundColor))
+            Log.e("TAG", "backgroundColor: ${model.backgroundColor} ", )
             itemDescription.text = model.description
             itemTitle.text = model.title
             itemDataAndTime.text = dataAndTime
