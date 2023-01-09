@@ -7,7 +7,7 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModel
 import androidx.viewbinding.ViewBinding
 
-abstract class BaseFragment<VB : ViewBinding, VM: ViewModel>(@LayoutRes idLayout: Int) :
+abstract class BaseFragment<VB : ViewBinding, VM : ViewModel>(@LayoutRes idLayout: Int) :
     Fragment(idLayout) {
 
     protected abstract val binding: VB

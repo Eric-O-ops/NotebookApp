@@ -12,4 +12,10 @@
     <string name="skip_screen">Пропустить</string>
     <string name="hint_need_to_do">Нужно сделать:</string>
     <string name="star_work">Начать работу</string>
+    <string name="toast_add_description">Пожалуйста, добвьте описание заметке.</string>
+    <string name="alert_dialog_main_title">Удалить заметку</string>
+    <string name="alert_dialog_main_massage">Вы действительно хотите удалить заметку?</string>
+    <string name="alert_dialog_main_positive_button_text">да</string>
+    <string name="alert_dialog_main_negative_button">нет</string>
+
 </resources>

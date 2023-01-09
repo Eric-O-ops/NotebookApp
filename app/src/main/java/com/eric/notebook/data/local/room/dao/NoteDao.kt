@@ -1,11 +1,7 @@
 package com.eric.notebook.data.local.room.dao
 
 import androidx.lifecycle.LiveData
-import androidx.room.Dao
-import androidx.room.Delete
-import androidx.room.Insert
-import androidx.room.OnConflictStrategy
-import androidx.room.Query
+import androidx.room.*
 import com.eric.notebook.models.NoteModel
 
 
@@ -21,4 +17,6 @@ interface NoteDao {
     @Delete(entity = NoteModel::class)
     fun deleteNote(noteModel: NoteModel)
 
+    @Query("SELECT * FROM ${NoteModel.TABLE_NAME} WHERE noteId = :noteId")
+    fun loadNoneById(noteId: Int): NoteModel
 }

@@ -9,9 +9,9 @@ import javax.inject.Inject
 @HiltViewModel
 class DetailViewModel @Inject constructor(
     private val repository: NoteRepository
-): ViewModel() {
+) : ViewModel() {
 
-     fun addNote(noteModel: NoteModel) {
+    fun addNote(noteModel: NoteModel) {
         repository.addNote(noteModel)
     }
 }

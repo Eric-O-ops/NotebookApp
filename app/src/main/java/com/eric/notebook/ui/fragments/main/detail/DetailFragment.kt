@@ -8,7 +8,8 @@ import com.eric.notebook.databinding.FragmentDetailBinding
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
-class DetailFragment : BaseFragment<FragmentDetailBinding, DetailViewModel>(R.layout.fragment_detail) {
+class DetailFragment :
+    BaseFragment<FragmentDetailBinding, DetailViewModel>(R.layout.fragment_detail) {
 
     override val binding by viewBinding(FragmentDetailBinding::bind)
     override val viewModel: DetailViewModel by viewModels()

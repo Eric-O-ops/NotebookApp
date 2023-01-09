@@ -10,7 +10,7 @@ import com.eric.notebook.models.NoteModel
         NoteModel::class
     ], version = 1
 )
-abstract class NoteRoomDataBase: RoomDatabase() {
+abstract class NoteRoomDataBase : RoomDatabase() {
 
     abstract fun noteDao(): NoteDao
 }

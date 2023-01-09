@@ -1,37 +1,53 @@
 package com.eric.notebook.ui.adapters
 
-import android.annotation.SuppressLint
 import android.graphics.Color
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
+import com.eric.notebook.base.BaseDiffUtilItemCallBack
 import com.eric.notebook.databinding.ItemNoteBinding
 import com.eric.notebook.models.NoteModel
 
-class NoteAdapter : RecyclerView.Adapter<NoteAdapter.ViewHolder>() {
+interface ClicksAdapter<T> {
 
-    private var noteList: List<NoteModel> = ArrayList()
+    fun onBind(model: T)
 
-    @SuppressLint("NotifyDataSetChanged")
-    fun setList(list: List<NoteModel>) {
+    fun shortClick()
 
-        noteList = list
-        notifyDataSetChanged()
-    }
+    fun longClick()
+}
+
+class NoteAdapter(
+    private val shortClick: (id: Int) -> Unit,
+    private val longClick: (noteModel: NoteModel) -> Unit
+) : ListAdapter<NoteModel, NoteAdapter.ViewHolder>(BaseDiffUtilItemCallBack.Base()) {
 
     inner class ViewHolder(private val binding: ItemNoteBinding) :
-        RecyclerView.ViewHolder(binding.root) {
+        RecyclerView.ViewHolder(binding.root), ClicksAdapter<NoteModel> {
 
-        fun onBind(model: NoteModel) = with(binding) {
-
+        override fun onBind(model: NoteModel) = with(binding) {
             val dataAndTime = "${model.date}\n${model.time}"
-
-            itemBackground.setBackgroundColor(Color.parseColor(model.backgroundColor))
-            Log.e("TAG", "backgroundColor: ${model.backgroundColor} ", )
-            itemDescription.text = model.description
             itemTitle.text = model.title
             itemDataAndTime.text = dataAndTime
+            itemDescription.text = model.description
+            itemBackground.setBackgroundColor(Color.parseColor(model.backgroundColor))
+
+            shortClick()
+            longClick()
+        }
+
+        override fun shortClick() {
+            itemView.setOnClickListener {
+                shortClick(getItem(absoluteAdapterPosition).id)
+            }
+        }
+
+        override fun longClick() {
+            itemView.setOnLongClickListener {
+                longClick(getItem(absoluteAdapterPosition))
+                return@setOnLongClickListener true
+            }
         }
     }
 
@@ -46,9 +62,6 @@ class NoteAdapter : RecyclerView.Adapter<NoteAdapter.ViewHolder>() {
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        holder.onBind(noteList[position])
+        holder.onBind(getItem(position))
     }
-
-    override fun getItemCount(): Int = noteList.size
-
 }
