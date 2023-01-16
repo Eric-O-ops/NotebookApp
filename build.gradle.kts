@@ -6,4 +6,7 @@ plugins {
 
     // Hilt
     id(Plugins.hilt) version Versions.hilt apply false
+
+    // Safe args
+    id(Plugins.safeArgs) version Versions.safeArgs apply false
 }

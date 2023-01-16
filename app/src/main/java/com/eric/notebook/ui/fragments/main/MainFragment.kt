@@ -1,8 +1,11 @@
 package com.eric.notebook.ui.fragments.main
 
 import android.app.AlertDialog
+import android.view.View
 import androidx.fragment.app.viewModels
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.StaggeredGridLayoutManager
 import by.kirich1409.viewbindingdelegate.viewBinding
 import com.eric.notebook.R
 import com.eric.notebook.base.BaseFragment
@@ -14,17 +17,16 @@ import com.eric.notebook.ui.adapters.NoteAdapter
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
-class MainFragment : BaseFragment<FragmentMainBinding, MainViewModel>(R.layout.fragment_main),
-    MainEvents {
+class MainFragment :
+    BaseFragment<FragmentMainBinding, MainViewModel>(R.layout.fragment_main), MainEvents {
 
     override val binding by viewBinding(FragmentMainBinding::bind)
     override val viewModel: MainViewModel by viewModels()
     private val noteAdapter =
         NoteAdapter(shortClick = this::detailNote, longClick = this::removeNote)
 
-    override fun initialize() {
-        loadNoteList()
-        binding.recyclerView.apply {
+    override fun initialize(): Unit = with(binding) {
+        recyclerViewLinear.apply {
             layoutManager = LinearLayoutManager(requireContext())
             adapter = noteAdapter
         }
@@ -34,7 +36,7 @@ class MainFragment : BaseFragment<FragmentMainBinding, MainViewModel>(R.layout.f
         addNote()
     }
 
-    override fun loadNoteList() {
+    override fun setupSubscribes() {
         viewModel.loadAllNote().observe(viewLifecycleOwner) { notes ->
             noteAdapter.submitList(notes)
         }
@@ -47,6 +49,9 @@ class MainFragment : BaseFragment<FragmentMainBinding, MainViewModel>(R.layout.f
     }
 
     override fun detailNote(id: Int) {
+        findNavController().navigate(
+            MainFragmentDirections.actionMainFragmentToDetailFragment(id)
+        )
         loge("MainFragment", "shortClick: $id")
     }
 

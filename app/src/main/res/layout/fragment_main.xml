@@ -26,7 +26,8 @@
             android:textSize="20sp"
             android:textStyle="bold" />
 
-        <ImageView
+        <ImageButton
+            android:id="@+id/change_layout"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="end"
@@ -58,10 +59,19 @@
         app:layout_constraintTop_toBottomOf="@id/tool_bar" />
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recycler_view"
+        android:id="@+id/recycler_view_linear"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_marginTop="7dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/et_search_for_notes" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycler_view_staggered"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="7dp"
+        android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toBottomOf="@id/et_search_for_notes" />
 

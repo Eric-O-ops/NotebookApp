@@ -22,7 +22,8 @@ abstract class BaseFragment<VB : ViewBinding, VM : ViewModel>(@LayoutRes idLayou
         setupView()
     }
 
-    protected open fun initialize() {}
+    protected open fun initialize() {
+    }
 
     protected open fun setupListener() {}
 

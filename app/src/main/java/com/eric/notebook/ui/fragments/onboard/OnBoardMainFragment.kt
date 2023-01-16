@@ -17,12 +17,9 @@ class OnBoardMainFragment : Fragment(R.layout.fragment_main_on_board) {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        initialize()
-    }
-
-    private fun initialize() = with(binding) {
-        viewPager.adapter = OnBoardAdapter(this@OnBoardMainFragment)
-        dotsIndicator.setViewPager(viewPager)
-
+        with(binding) {
+            viewPager.adapter = OnBoardAdapter(this@OnBoardMainFragment)
+            dotsIndicator.setViewPager(viewPager)
+        }
     }
 }

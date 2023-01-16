@@ -26,22 +26,18 @@ class OnBoardFragment : Fragment(R.layout.fragment_on_board) {
     }
 
     private fun changeViewPageRes() = with(binding) {
-        val position = requireArguments().getInt(VIEW_PAGE_POSITION_KEY)
-        val firstScreen = 0
-        val secondScreen = 1
-        val thirdScreen = 2
 
-        when (position) {
+        when (requireArguments().getInt(VIEW_PAGE_POSITION_KEY)) {
 
-            firstScreen -> {
+            0 -> {
                 animationView.setAnimation("anim_image_1.json")
                 tvAnimViewDescription.setText(R.string.anim_view_description_1)
             }
-            secondScreen -> {
+            1 -> {
                 animationView.setAnimation("anim_image_2.json")
                 tvAnimViewDescription.setText(R.string.anim_view_description_2)
             }
-            thirdScreen -> {
+            3 -> {
                 animationView.setAnimation("anim_image_3.json")
                 tvAnimViewDescription.setText(R.string.anim_view_description_3)
                 btnSkipOnBoard.visibility = View.GONE

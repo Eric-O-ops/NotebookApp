@@ -20,6 +20,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="15dp"
             android:layout_marginTop="13dp"
+            android:maxLines="1"
             android:textColor="@color/medium_light_gray"
             android:textSize="12sp"
             app:layout_constraintStart_toStartOf="parent"
@@ -41,7 +42,7 @@
             app:layout_constraintEnd_toStartOf="@id/item_data_and_time"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/item_title"
-            tools:text="Работы с проектом, сделать домашку, убраться и..." />
+            tools:text="Работ с проектом, сделать домашку, убраться и..." />
 
         <TextView
             android:id="@+id/item_data_and_time"

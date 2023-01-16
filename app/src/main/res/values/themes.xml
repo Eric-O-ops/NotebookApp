@@ -13,4 +13,5 @@
         <item name="android:statusBarColor">@color/light_black</item>
         <!-- Customize your theme here. -->
     </style>
+
 </resources>

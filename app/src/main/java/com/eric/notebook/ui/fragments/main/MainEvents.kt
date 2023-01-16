@@ -6,8 +6,6 @@ interface MainEvents {
 
     fun addNote()
 
-    fun loadNoteList()
-
     fun detailNote(id: Int)
 
     fun removeNote(note: NoteModel)

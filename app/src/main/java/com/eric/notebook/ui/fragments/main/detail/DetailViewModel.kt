@@ -11,7 +11,7 @@ class DetailViewModel @Inject constructor(
     private val repository: NoteRepository
 ) : ViewModel() {
 
-    fun addNote(noteModel: NoteModel) {
-        repository.addNote(noteModel)
-    }
+    fun loadNoteById(id: Int) = repository.loadNoteById(id)
+
+    fun refreshNote(noteModel: NoteModel) = repository.refreshNote(noteModel)
 }

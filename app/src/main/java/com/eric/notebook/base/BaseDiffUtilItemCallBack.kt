@@ -10,7 +10,6 @@ interface BaseDiffUtilItemCallBack {
 
         override fun areItemsTheSame(oldItem: B, newItem: B) = oldItem.id == newItem.id
 
-
         @SuppressLint("DiffUtilEquals")
         override fun areContentsTheSame(oldItem: B, newItem: B) = oldItem == newItem
 

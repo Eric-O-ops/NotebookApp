@@ -7,6 +7,9 @@ plugins {
 
     // Hilt
     id(Plugins.hilt)
+
+    // Sage args
+    id(Plugins.safeArgs)
 }
 
 android {

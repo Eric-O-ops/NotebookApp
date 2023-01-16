@@ -18,5 +18,8 @@ interface NoteDao {
     fun deleteNote(noteModel: NoteModel)
 
     @Query("SELECT * FROM ${NoteModel.TABLE_NAME} WHERE noteId = :noteId")
-    fun loadNoneById(noteId: Int): NoteModel
+    fun loadNoteById(noteId: Int): NoteModel
+
+    @Update(onConflict = OnConflictStrategy.REPLACE)
+    fun refreshNote(noteModel: NoteModel)
 }

@@ -11,7 +11,7 @@ class MainViewModel @Inject constructor(
     private val repository: NoteRepository
 ) : ViewModel() {
 
-    fun loadAllNote() = repository.loadAllNone()
+    fun loadAllNote() = repository.loadAllNote()
 
     fun removeNote(note: NoteModel) = repository.deleteNote(note)
 }
