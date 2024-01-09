@@ -1,4 +1,4 @@
-package com.eric.notebook.ui.fragments.main.addnote
+package com.eric.notebook.ui.fragments.addnote
 
 import androidx.lifecycle.ViewModel
 import com.eric.notebook.data.local.repositories.NoteRepository

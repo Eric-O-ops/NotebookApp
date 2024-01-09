@@ -1,4 +1,4 @@
-package com.eric.notebook.ui.fragments.main
+package com.eric.notebook.ui.fragments.detail
 
 import android.widget.RadioButton
 import com.eric.notebook.R

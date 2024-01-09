@@ -12,4 +12,9 @@ class UserPreferenceData(
         set(value) = preferenceHelper().edit()
             .putBoolean(PreferenceConstants.ON_BOARD_ACTIVATED, value).apply()
 
+    var isLinear: Boolean
+        get() = preferenceHelper()
+            .getBoolean(PreferenceConstants.LINEAR_LAYOUT, true)
+        set(value) = preferenceHelper().edit()
+            .putBoolean(PreferenceConstants.LINEAR_LAYOUT, value).apply()
 }

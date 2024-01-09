@@ -22,4 +22,7 @@ interface NoteDao {
 
     @Update(onConflict = OnConflictStrategy.REPLACE)
     fun refreshNote(noteModel: NoteModel)
+
+    @Query("SELECT * FROM ${NoteModel.TABLE_NAME} WHERE noteTitle LIKE :searchQuery OR noteDescription LIKE :searchQuery")
+    fun searchNote(searchQuery: String): LiveData<List<NoteModel>>
 }

@@ -14,4 +14,10 @@ class MainViewModel @Inject constructor(
     fun loadAllNote() = repository.loadAllNote()
 
     fun removeNote(note: NoteModel) = repository.deleteNote(note)
+
+    fun isLinearLayout() = repository.getLinearState()
+
+    fun changeLinearState(value: Boolean) = repository.changeLinerState(value)
+
+    fun searchNote(value: String) = repository.searchNote(value)
 }

@@ -6,6 +6,18 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".ui.fragments.onboard.OnBoardMainFragment">
 
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_skip_on_board"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="end"
+        android:background="#00000000"
+        android:paddingTop="25dp"
+        android:text="@string/skip_screen"
+        android:textAllCaps="false"
+        android:textColor="@color/orange"
+        android:textSize="15sp" />
+
    <androidx.viewpager2.widget.ViewPager2
        android:id="@+id/view_pager"
        android:layout_width="match_parent"

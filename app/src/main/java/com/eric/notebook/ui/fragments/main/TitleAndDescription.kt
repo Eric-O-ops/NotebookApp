@@ -10,8 +10,8 @@ interface TitleAndDescription {
         override fun title(): String {
             var title = ""
             val charText = description.toCharArray()
-            return if (description.length >= 30) {
-                for (i in 0..30) {
+            return if (description.length >= 20) {
+                for (i in 0..20) {
                     title += charText[i].toString()
                 }
                 title

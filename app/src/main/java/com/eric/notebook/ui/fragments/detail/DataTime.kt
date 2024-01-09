@@ -1,4 +1,4 @@
-package com.eric.notebook.ui.fragments.main
+package com.eric.notebook.ui.fragments.detail
 
 import java.text.SimpleDateFormat
 import java.util.*

@@ -14,4 +14,10 @@ abstract class BaseRepository {
     abstract fun loadNoteById(id: Int): NoteModel
 
     abstract fun refreshNote(noteModel: NoteModel)
+
+    abstract fun searchNote(value: String): LiveData<List<NoteModel>>
+
+    abstract fun getLinearState(): Boolean
+
+    abstract fun changeLinerState(value: Boolean)
 }

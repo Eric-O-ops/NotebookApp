@@ -37,10 +37,9 @@ class OnBoardFragment : Fragment(R.layout.fragment_on_board) {
                 animationView.setAnimation("anim_image_2.json")
                 tvAnimViewDescription.setText(R.string.anim_view_description_2)
             }
-            3 -> {
+            2 -> {
                 animationView.setAnimation("anim_image_3.json")
                 tvAnimViewDescription.setText(R.string.anim_view_description_3)
-                btnSkipOnBoard.visibility = View.GONE
                 tvStartWork.visibility = View.VISIBLE
             }
         }
@@ -50,10 +49,6 @@ class OnBoardFragment : Fragment(R.layout.fragment_on_board) {
         val goToMainFragment = fun() {
             userPreferenceData.onBoard = true
             navigate(R.id.action_mainOnBoardFragment_to_mainFragment)
-        }
-
-        btnSkipOnBoard.setOnClickListener {
-            goToMainFragment()
         }
 
         tvStartWork.setOnClickListener {

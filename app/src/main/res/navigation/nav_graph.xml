@@ -27,7 +27,7 @@
 
     <fragment
         android:id="@+id/detailFragment"
-        android:name="com.eric.notebook.ui.fragments.main.detail.DetailFragment"
+        android:name="com.eric.notebook.ui.fragments.detail.DetailFragment"
         android:label="fragment_detail"
         tools:layout="@layout/fragment_detail">
 
@@ -36,6 +36,7 @@
             app:destination="@id/mainFragment"
             app:popUpTo="@id/detailFragment"
             app:popUpToInclusive="true" />
+
         <argument
             android:name="noteId"
             app:argType="integer"
@@ -45,7 +46,7 @@
 
     <fragment
         android:id="@+id/addNoteFragment"
-        android:name="com.eric.notebook.ui.fragments.main.addnote.AddNoteFragment"
+        android:name="com.eric.notebook.ui.fragments.addnote.AddNoteFragment"
         android:label="fragment_add_note"
         tools:layout="@layout/fragment_add_note">
 
@@ -70,4 +71,5 @@
             app:popUpToInclusive="true" />
 
     </fragment>
+
 </navigation>
