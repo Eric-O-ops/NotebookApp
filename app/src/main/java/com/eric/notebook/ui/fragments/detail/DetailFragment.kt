@@ -25,6 +25,7 @@ class DetailFragment :
         etDescriptionNote.setText(note.description)
         btnBackAndDate.text = DataTime.Base().data()
         tvTime.text = DataTime.Base().time()
+
         when (note.backgroundColor) {
             "#191818" -> {
                 backgroundColorNote.position(radioBtnPosition1)
@@ -42,19 +43,8 @@ class DetailFragment :
 
     override fun setupListener() = with(binding) {
         setBackgroundColorNote()
-        val note = viewModel.loadNoteById(safeArgs.noteId)
         btnBackAndDate.setOnClickListener {
-            val titleAndDescription = TitleAndDescription.Base(etDescriptionNote.text.toString())
-            if (etDescriptionNote.length() != 0) {
-                viewModel.refreshNote(
-                    note.copy(
-                        time = "${tvTime.text} (redacted)",
-                        date = btnBackAndDate.text.toString(),
-                        title = titleAndDescription.title(),
-                        description = titleAndDescription.description(),
-                        backgroundColor = backgroundColorNote.backgroundColor()
-                    )
-                )
+            if (!etDescriptionNote.text.isNullOrEmpty()) {
                 findNavController().popBackStack()
             } else {
                 Toast.makeText(
@@ -77,6 +67,25 @@ class DetailFragment :
 
         btnColor3.setOnClickListener {
             backgroundColorNote.position(radioBtnPosition3)
+        }
+    }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        val note = viewModel.loadNoteById(safeArgs.noteId)
+        with(binding) {
+            val titleAndDescription = TitleAndDescription.Base(etDescriptionNote.text.toString())
+            if (!etDescriptionNote.text.isNullOrEmpty()) {
+                viewModel.refreshNote(
+                    note.copy(
+                        time = "${tvTime.text} (redacted)",
+                        date = btnBackAndDate.text.toString(),
+                        title = titleAndDescription.title(),
+                        description = titleAndDescription.description(),
+                        backgroundColor = backgroundColorNote.backgroundColor()
+                    )
+                )
+            }
         }
     }
 }

@@ -101,9 +101,22 @@ class AddNoteFragment :
         }
     }
 
-    override fun onDestroy() {
-        super.onDestroy()
-
-
+    override fun onDestroyView() {
+        super.onDestroyView()
+        with(binding) {
+            if (!etDescriptionNote.text.isNullOrEmpty()) {
+                val descriptionAndTitle =
+                    TitleAndDescription.Base(etDescriptionNote.text.toString())
+                viewModel.addNote(
+                    NoteModel(
+                        date = btnBackAndDate.text.toString(),
+                        time = tvTime.text.toString(),
+                        title = descriptionAndTitle.title(),
+                        description = descriptionAndTitle.description(),
+                        backgroundColor = backgroundColorNote.backgroundColor()
+                    )
+                )
+            }
+        }
     }
 }
