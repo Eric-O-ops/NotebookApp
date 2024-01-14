@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <item
+        android:id="@+id/action_create_event"
+        android:title="add_event" />
+
+    <item
+        android:id="@+id/action_app_rating"
+        android:title="app_rating" />
+
+    <item
+        android:id="@+id/action_support"
+        android:title="support" />
+
+    <item
+        android:id="@+id/action_about_the_application"
+        android:title="about_the_application" />
+
+</menu>

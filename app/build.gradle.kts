@@ -1,12 +1,15 @@
 plugins {
-    id (Plugins.application)
-    id (Plugins.kotlinAndroid)
+    id(Plugins.application)
+    id(Plugins.kotlinAndroid)
 
     // Kapt
-    kotlin (Plugins.kapt)
+    kotlin(Plugins.kapt)
 
     // Hilt
-    id (Plugins.hilt)
+    id(Plugins.hilt)
+
+    // Sage args
+    id(Plugins.safeArgs)
 }
 
 android {
@@ -26,8 +29,10 @@ android {
     buildTypes {
         release {
             isMinifyEnabled = false
-            proguardFiles (getDefaultProguardFile(
-                "proguard-android-optimize.txt"), "proguard-rules.pro"
+            proguardFiles(
+                getDefaultProguardFile(
+                    "proguard-android-optimize.txt"
+                ), "proguard-rules.pro"
             )
         }
     }
@@ -38,26 +43,28 @@ android {
     kotlinOptions {
         jvmTarget = Config.jvmTarget
     }
+    // ViewBinding
+    buildFeatures.viewBinding = true
 }
 
 dependencies {
 
     // Core
-    implementation (Dependencies.Core.core)
+    implementation(Dependencies.Core.core)
 
     // Appcompat
-    implementation (Dependencies.UIComponents.appcompat)
+    implementation(Dependencies.UIComponents.appcompat)
 
     // Material
-    implementation (Dependencies.UIComponents.material)
+    implementation(Dependencies.UIComponents.material)
 
     // Constraint Layout
-    implementation (Dependencies.UIComponents.constraintLayout)
+    implementation(Dependencies.UIComponents.constraintLayout)
 
     // Tests
-    testImplementation ("junit:junit:4.13.2")
-    androidTestImplementation ("androidx.test.ext:junit:1.1.4")
-    androidTestImplementation ("androidx.test.espresso:espresso-core:3.5.0")
+    testImplementation("junit:junit:4.13.2")
+    androidTestImplementation("androidx.test.ext:junit:1.1.4")
+    androidTestImplementation("androidx.test.espresso:espresso-core:3.5.0")
 
     // Room
     implementation(Dependencies.Room.roomRuntime)
@@ -75,8 +82,11 @@ dependencies {
     kapt(Dependencies.DaggerHilt.hiltAndroidKapt)
 
     //LottieFiles
-    implementation (Dependencies.LottieFiles.lottie)
+    implementation(Dependencies.LottieFiles.lottie)
 
     //Dots indicator
-    implementation (Dependencies.DotsIndicator.dotsIndicator)
+    implementation(Dependencies.DotsIndicator.dotsIndicator)
+
+    // SharedPreference
+    implementation("androidx.datastore:datastore-preferences:1.0.0")
 }

@@ -12,6 +12,7 @@ object Versions {
     const val lottie = "3.4.0"
     const val dotsIndicator = "2.1.6"
     const val navVersion = "2.5.2"
+    const val safeArgs = "2.5.3"
 }
 
 object Plugins {
@@ -21,6 +22,7 @@ object Plugins {
     const val androidLibrary = "com.android.library"
     const val kapt = "kapt"
     const val hilt = "com.google.dagger.hilt.android"
+    const val safeArgs = "androidx.navigation.safeargs.kotlin"
 }
 
 object Dependencies {
