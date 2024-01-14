@@ -3,8 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph.xml"
-    tools:ignore="InvalidNavigation"
-    app:startDestination="@id/signInFragment">
+    tools:ignore="InvalidNavigation">
 
     <fragment
         android:id="@+id/mainFragment"
@@ -72,10 +71,5 @@
             app:popUpToInclusive="true" />
 
     </fragment>
-    <fragment
-        android:id="@+id/signInFragment"
-        android:name="com.eric.notebook.ui.fragments.signin.SignInFragment"
-        android:label="fragment_sign_in"
-        tools:layout="@layout/fragment_sign_in" />
 
 </navigation>

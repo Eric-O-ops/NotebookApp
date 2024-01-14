@@ -24,15 +24,9 @@ class MainActivity : AppCompatActivity() {
         val navController = navHostFragment.navController
         val navGraph = navController.navInflater.inflate(R.navigation.nav_graph)
 
-        when {
-            !userPreferencesData.onBoard -> {
-                navGraph.setStartDestination(R.id.mainOnBoardFragment)
-            }
+        if (!userPreferencesData.onBoard) navGraph.setStartDestination(R.id.mainOnBoardFragment)
+        else navGraph.setStartDestination(R.id.mainFragment)
 
-            else -> {
-                navGraph.setStartDestination(R.id.signInFragment)
-            }
-        }
         navController.graph = navGraph
     }
 }
