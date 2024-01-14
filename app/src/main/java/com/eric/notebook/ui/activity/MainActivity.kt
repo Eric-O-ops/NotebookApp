@@ -20,7 +20,19 @@ class MainActivity : AppCompatActivity() {
 
         val navHostFragment =
             supportFragmentManager.findFragmentById(R.id.nav_host_fragment) as NavHostFragment
-        val value = userPreferencesData.onBoard
-        StartDestination.Base(navHostFragment, R.navigation.nav_graph).startDestId(value)
+        //StartDestination.Base(navHostFragment, R.navigation.nav_graph).startDestId(value)
+        val navController = navHostFragment.navController
+        val navGraph = navController.navInflater.inflate(R.navigation.nav_graph)
+
+        when {
+            !userPreferencesData.onBoard -> {
+                navGraph.setStartDestination(R.id.mainOnBoardFragment)
+            }
+
+            else -> {
+                navGraph.setStartDestination(R.id.signInFragment)
+            }
+        }
+        navController.graph = navGraph
     }
 }
