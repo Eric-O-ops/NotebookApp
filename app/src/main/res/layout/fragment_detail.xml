@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/black"
+    tools:context=".ui.fragments.detail.DetailFragment">
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_back_and_date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#00000000"
+        android:paddingStart="19dp"
+        android:paddingEnd="5dp"
+        android:textAllCaps="false"
+        android:textSize="14sp"
+        app:icon="@drawable/ic_arrow_back"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="30 мая" />
+
+    <TextView
+        android:id="@+id/tv_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/medium_light_gray"
+        app:layout_constraintBottom_toBottomOf="@id/btn_back_and_date"
+        app:layout_constraintStart_toEndOf="@+id/btn_back_and_date"
+        app:layout_constraintTop_toTopOf="@id/btn_back_and_date"
+        tools:text="17:30" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginBottom="5dp"
+        app:layout_constraintTop_toBottomOf="@id/btn_back_and_date"
+        app:layout_constraintBottom_toTopOf="@id/linearLayout">
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/et_description_note"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginTop="16dp"
+            android:textColor="@color/medium_light_gray"
+            android:inputType="textMultiLine"
+            android:padding="10dp"
+            android:textCursorDrawable="@drawable/text_cursor"
+            android:background="@null"
+            android:textColorHint="@color/medium_light_gray"
+            android:textSize="12sp"
+            app:layout_constraintTop_toBottomOf="@id/btn_back_and_date" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="12dp"
+        android:gravity="center"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toTopOf="@id/radio_group">
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_color_1"
+            android:layout_width="80dp"
+            android:layout_height="45dp"
+            android:background="@drawable/round_button"
+            android:backgroundTint="@color/light_black"/>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_color_2"
+            android:layout_width="80dp"
+            android:layout_height="45dp"
+            android:layout_marginHorizontal="30dp"
+            android:background="@drawable/round_button"
+            android:backgroundTint="@color/lemon_chiffon"/>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_color_3"
+            android:layout_width="80dp"
+            android:layout_height="45dp"
+            android:background="@drawable/round_button"
+            android:backgroundTint="@color/dark_red"/>
+
+    </LinearLayout>
+
+    <RadioGroup
+        android:id="@+id/radio_group"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_marginBottom="13dp"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <com.google.android.material.radiobutton.MaterialRadioButton
+            android:id="@+id/radio_btn_position_1"
+            android:layout_width="14dp"
+            android:layout_height="11dp"
+            android:background="@drawable/custom_chooser_item"
+            android:button="@drawable/custom_chooser_item"
+            android:checked="true" />
+
+        <com.google.android.material.radiobutton.MaterialRadioButton
+            android:id="@+id/radio_btn_position_2"
+            android:layout_width="14dp"
+            android:layout_height="11dp"
+            android:layout_marginHorizontal="95dp"
+            android:background="@drawable/custom_chooser_item"
+            android:button="@drawable/custom_chooser_item"
+            android:checked="false" />
+
+        <com.google.android.material.radiobutton.MaterialRadioButton
+            android:id="@+id/radio_btn_position_3"
+            android:layout_width="14dp"
+            android:layout_height="11dp"
+            android:background="@drawable/custom_chooser_item"
+            android:button="@drawable/custom_chooser_item"
+            android:checked="false" />
+
+    </RadioGroup>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
